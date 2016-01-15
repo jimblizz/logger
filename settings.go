@@ -14,6 +14,10 @@ var (
 func Enabled() (map[string]bool, bool) {
 	val := os.Getenv("LOG")
 
+	if val == "" {
+		return nil, true
+	}
+
 	if val == "*" {
 		return nil, true
 	}
